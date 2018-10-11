@@ -1,0 +1,17 @@
+// Header
+//
+// Image set at the top of the page
+
+.header-img {
+    background-image: url('static/images/header.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    height: 200px;
+    margin: 0 auto;
+
+    position: relative;
+
+    border-bottom: 10px solid #eeeeee;
+}

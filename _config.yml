@@ -1,0 +1,40 @@
+# Permalinks
+permalink:           pretty
+
+# Setup
+title:               DaulPav.id
+tagline:             Software Design, Communications, Software-Defined Radio, Hardware Hacking
+url:                 https://daulpav.id
+paginate:            1
+baseurl:             ""
+analytics_id:        "UA-127409755-1"
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# Specify where the static images for figures are stored
+default:
+  - scope:
+      path: "static/images"
+    values:
+      image: true
+
+# About/contact
+author:
+  name:              Paul David
+  url:               https://github.com/daulpavid
+  email:             daulpavid@daulpav.id
+
+# Custom vars
+version:             1.0.0
+github:
+  repo:              https://github.com/daulpavid/daulpavid.github.io
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
