@@ -6,7 +6,7 @@ title: About
 # Paul David - Software Engineer
 --------------------------------
 
-<img src="https://i.imgur.com/O3kjwFC.jpg" align="right" />
+<p align="center"><img src="https://i.imgur.com/O3kjwFC.jpg" /></p>
 
 I'm a software engineer with a focus on wireless communications living and working in Atlanta.
 
