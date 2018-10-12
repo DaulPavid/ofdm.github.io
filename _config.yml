@@ -23,11 +23,14 @@ default:
     values:
       image: true
 
-# About/contact
+# Personal information
 author:
   name:              Paul David
   url:               https://github.com/daulpavid
   email:             daulpavid@daulpav.id
+  linkedin:          DaulPavid
+  github_username:   DaulPavid
+  twitter:           daulpavid
 
 # Custom vars
 version:             1.0.0

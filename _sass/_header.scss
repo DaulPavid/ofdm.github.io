@@ -3,15 +3,29 @@
 // Image set at the top of the page
 
 .header-img {
-    background-image: url('static/images/header.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url('static/images/header.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    height: 200px;
-    margin: 0 auto;
+  height: 200px;
+  margin: 0 auto;
 
-    position: relative;
+  position: relative;
 
-    border-bottom: 10px solid #eeeeee;
+  border-bottom: 10px solid #eeeeee;
 }
+
+.header-icons {
+  float: right;
+  position: relative;
+
+  .fa {
+      width: 1em;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
