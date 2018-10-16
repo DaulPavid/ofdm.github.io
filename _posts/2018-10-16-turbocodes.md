@@ -49,25 +49,39 @@ The algorithm is stated as follows:
 
 * Calculate branch metrics based in the input message:
 
-\\[ \gamma_k \left(s_m, s_n \right) = c_k^0 L_a \left( c_k^0 \right) + c_k^0 L_c r_k^0 + c_k^1 L_c r_k^1 \\]
+$$ \gamma_k \left(s_m, s_n \right) = c_k^0 L_a \left( c_k^0 \right) + c_k^0 L_c r_k^0 + c_k^1 L_c r_k^1 $$
 
 * Compute the forward path metrics along the trellis:
 
-\\[ \alpha_k \left(s_n \right) = \max \left(\alpha_{k-1} \left(s_m \right) + \gamma \left(s_m, s_n \right) \right) \\]
+$$ \alpha_k \left(s_n \right) = \max \left(\alpha_{k-1} \left(s_m \right) + \gamma \left(s_m, s_n \right) \right) $$
 
-\\[ \alpha_0 \left(s_n = 0 \right) = 0 \\]
-\\[ \alpha_0 \left(s_n \neq 0 \right) = -\inf \\]
+$$
+\alpha_0 \left(s_n \right) =
+\begin{cases}
+  0,       & s_n = 0     \\
+  -\infty, & s_n \neq 0
+\end{cases}
+$$
 
 * Compute the backward path metrics in the opposite direction on the trellis:
 
-\\[ \beta_k \left(s_m \right) = \max \left(\beta_{k+1} \left(s_n \right) + \gamma \left(s_m, s_n \right) \right) \\]
+$$ \beta_k \left(s_m \right) = \max \left(\beta_{k+1} \left(s_n \right) + \gamma \left(s_m, s_n \right) \right) $$
 
-\\[ \beta_K \left(s_m = 0 \right) = 0 \\]
-\\[ \beta_K \left(s_m \neq 0 \right) = -\inf \\]
+$$
+\beta_K \left(s_m \right) =
+\begin{cases}
+  0,       & s_m = 0     \\
+  -\infty, & s_m \neq 0
+\end{cases}
+$$
 
 * Compute the Log-Likelihood Ratios (LLRs):
 
-\\[ L^a \left( m_k \right) = \max_{x_k = 1} \left( \alpha_{k-1} \left( s_n \right) + \gamma_k \left( s_n, s_m \right) + \beta_k \left( s_m \right) \right) - \\ \max_{x_k = 0} \left( \alpha_{k-1} \left( s_n \right) + \gamma_k \left( s_n, s_m \right) + \beta_k \left( s_m \right) \right) \\]
+$$
+\begin{align}
+\text{LLR} \left( m_k \right) = \max_{x_k = 1} \left( \alpha_{k-1} \left( s_n \right) + \gamma_k \left( s_n, s_m \right) + \beta_k \left( s_m \right) \right) \\ -\max_{x_k = 0} \left( \alpha_{k-1} \left( s_n \right) + \gamma_k \left( s_n, s_m \right) + \beta_k \left( s_m \right) \right)
+\end{align}
+$$
 
 The input vector can be interpreted as a list of tuples with the first value corresponding to the systematic (original) bits, and the other values corresponding to the output codeword bits. In the MAP algorithm, we are trying to determine the likelihood of receiving a particular bit at time \\( k \\) by using the branch and path metrics to score transitions on the trellis. Only the branch metric calculation requires the input vector, after which the path metrics are calculated recursively using the branch metrics as input.
 
