@@ -19,8 +19,8 @@ I do not delve into puncturing, which optional from the decoder's point of view,
 
 In this example, a rate 1/3 turbo code encoder consists of two recursive systematic convolutional (RSC) encoders, and an interleaver before the second encoder. The purpose of the interleaver is to ensure the parity bits are mostly independent. Figure 1 provides a simple picture of the encoder setup.
 
-<figure>
-  <img src="/static/turbocodes/figure_1.png" align="center" />
+<figure align="center">
+  <img src="/static/turbocodes/figure_1.png" />
   <p align="center"><b>Figure 1: Turbo Encoder Diagram</b></p>
 </figure>
 
@@ -28,8 +28,8 @@ An individual RSC encoder can be represented by a single segment of a trellis di
 
 The structure of a convolutional encoder (RSC encoder) is made of up memory registers that each hold 1 bit, and some number of modulo-2 adders. In our example, we're using a simple recursive convolutional code.
 
-<figure>
-  <img src="/static/turbocodes/figure_2.png" align="center" />
+<figure align="center">
+  <img src="/static/turbocodes/figure_2.png" />
   <p align="center"><b>Figure 2: Trellis section which represents a single RSC encoder</b></p>
 </figure>
 
@@ -78,23 +78,23 @@ My implementation of the SISO decoder can be found [here.](https://github.com/Da
 The turbo decoder ties together two SISO (MAP) decoders and uses the output of the first to act as extrinsic (prior) information to the second.
 Figure 3 illustrates how the two decoders are tied together, and it is probably easy to guess the origin of the term turbo: the turbocharger used in automobiles.
 
-<figure>
-  <img src="/static/turbocodes/figure_3.png" align="center">
+<figure align="center">
+  <img src="/static/turbocodes/figure_3.png" />
   <p align="center"><b>Figure 3: Turbo Decoder Diagram</b></p>
 </figure>
 
 To further show how a turbo decoder works, figure 4 displays the soft bit outputs after each iteration. One can see how the turbo decoder gains confidence after each computation of the log-likelihood ratios (LLRs). The distance between the soft bit values and the origin grow with every iteration, making the hard decision \\( \left( x_t > 0 \rightarrow 1, x_t < 0 \rightarrow 0 \right) \\) easier.
 
-<figure>
-  <img src="/static/turbocodes/figure_4.png" align="center">
+<figure align="center">
+  <img src="/static/turbocodes/figure_4.png" />
   <p align="center"><b>Figure 4</b></p>
 </figure>
 
 In order to test the turbo decoder over a wide range of signal-to-noise (SNR) ratios, I produced a bit error rate (BER) curve comparing a coded BPSK performance versus an uncoded BPSK signal. One can measure a very large coding gain if a required BER is specified, as shown in figure 5.
 The number of iterations depends on if the outputs of the SISO decoders agree with each other. This is called the early-exit criterion.
 
-<figure>
-  <img src="/static/turbocodes/figure_5.png" align="center">
+<figure align="center">
+  <img src="/static/turbocodes/figure_5.png" />
   <p align="center"><b>Figure 5</b></p>
 </figure>
 
