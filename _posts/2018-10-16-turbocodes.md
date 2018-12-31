@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Turbo Codes"
+description: "A short tutorial and example of a turbo codes implementation"
 ---
 
 # Turbo Codes: A Tale of Two (En/De)coders
