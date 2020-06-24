@@ -3,7 +3,7 @@ layout: page
 title: About
 ---
 
-# Paul David - [SDR / DSP / Software] Engineer
+# Paul David - [Software / DSP] Engineer
 ----------------------------------------------
 
 <p align="center"><img src="https://i.imgur.com/O3kjwFC.jpg" /></p>
@@ -20,7 +20,7 @@ Areas of expertise include:
 I have experience with various frameworks used in the development of
 communication systems, such as GNU Radio, liquid-dsp, and custom development.
 In addition, I'm proficient with Verilog and I've had experience with FPGA
-design. I also have experience with platforms such as the Ettus USRP and other
+design. I have familiarity with platforms such as the Ettus USRP and other
 software-defined radios.
 
 My professional (and hobby) interests include software development and digital signal processing.
